@@ -1,0 +1,242 @@
+:root {
+    --primary-color: #f1faff;
+    --text-dark: #030712;
+    --text-light: #6b7280;
+    --extra-light: #fbfbfb;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section__title {
+    padding-bottom: .5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.section__title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 75px;
+    background-color: var(--text-dark);
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.8rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header__bar {
+    padding: .5rem;
+    font-size: .8rem;
+    text-align: center;
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+.nav__container {
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.link a {
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.link a:hover {
+    color: var(--text-dark);
+}
+
+.nav__icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__icons span {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+header {
+    margin-top: 10rem;
+    background-color: rgb(199, 235, 247);
+}
+
+.header__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.header__content p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.header__content h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.header__content .btn {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+.header__image {
+    position: relative;
+}
+
+.header__image img {
+    max-width: 400px;
+    position: absolute;
+    bottom: -5rem;
+}
+
+.collection__container {
+    position: relative;
+}
+
+.collection__container img {
+    max-width: 400px;
+    margin: auto;
+}
+
+.collection__content {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+}
+
+.collection__content .section__title {
+    margin-bottom: 2rem;
+}
+
+.collection__content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.collection__contenth4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.collection__content .btn {
+    border: 1px solid rgb(24, 247, 255);
+    color: var(--black);
+    background-color: rgb(24, 247, 255);
+}
+
+.collection__content .btn:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+.musthave__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.musthave__nav a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.musthave__nav a:hover {
+    color: var(--text-dark);
+}
+
+.musthave__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.musthave__card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.musthave__btn {
+    border: 1px solid rgb(13, 174, 180);
+    color: var(--black);
+    background-color: rgb(13, 174, 180);
+}
+
+.musthave__btn:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+.musthave__btn h2 {
+    color: var(--white);
+}
