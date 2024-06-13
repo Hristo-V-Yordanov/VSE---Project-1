@@ -9,6 +9,82 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .search__container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background-color: #f2f2f2;
+            z-index: 1000;
+        }
+
+        .search__input {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .search__button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+
+        .close__button {
+            padding: 8px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .glow {
+    outline: 2px solid #00ff00; /* Green glowing outline */
+    outline-offset: 2px;
+    animation: glow-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow-animation {
+    from {
+        outline-color: #00ff00; /* Green */
+        outline-offset: 0px;
+    }
+    to {
+        outline-color: #00ff00; /* Green */
+        outline-offset: 5px;
+    }
+}
+#closeButton {
+    position: absolute;
+    top: 50%;
+    border-radius: 10px;
+    right: 10px; /* Adjust the distance from the right edge */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(255, 0, 0, 0.885);
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Adjust as needed for size */
+    font-size: 1.2em; /* Adjust font size */
+    cursor: pointer;
+    outline: none;
+}
+
+#closeButton:hover {
+    background-color: darkred; /* Change color on hover */
+}
+    </style>
     <title>KoalaBuy</title>
 </head>
 <body>
@@ -23,7 +99,7 @@
         </ul>
         <div class="nav__icons">
             <span><i class="ri-shield-user-line"></i></span>
-            <span><i class="ri-search-2-line"></i></span>
+            <span><i class="ri-search-2-line" id="searchIcon"></i></span>
             <span><i class="ri-shopping-cart-2-line"></i></span>
         </div>
     </nav>
@@ -33,40 +109,46 @@
             <div class="header__content">
                 <p>EXTRA 25% OFF IN THE SUMMER SALE</p>
                 <h1>Discover and Shop<br />The Trend s24</h1>
-                <button class="btn">SHOP NOW!</button>
+                <button class="btn" onclick="scrollToOnSale()">SHOP NOW!</button>
             </div>
             <div class="header__image">
                 <img src="header.png" alt="header" />
             </div>
         </div>
     </header>
-
+    
+    <div class="search__container" id="searchContainer">
+        <input type="text" class="search__input" id="searchInput" placeholder="Type a product...">
+        <button class="search__button" onclick="handleSearch()">Search</button>
+        <button id="closeButton" onclick="closeSearch()">X</button>
+    </div>
+    
     <section class="section__container collection__container">
         <img src="collection.png" alt="collection">
         <div class="collection__content">
             <h2 class="section__title">New Collection</h2>
             <p>#35 ITEMS!</p>
             <h4>Available on Store</h4>
-            <button class="btn">SHOP NOW!</button>
+            <button class="btn" onclick="scrollToOnSale()">SHOP NOW!</button>
         </div>
     </section>
-
-    <section class="section__container musthave__container">
+    
+    <section class="section__container musthave__container" id="on-sale">
         <h2 class="section__title">On Sale</h2>
         <div class="musthave__grid">
-            <div class="musthave__card">
+            <div class="musthave__card" id="product1">
                 <img src="hawaii2.png" alt="must have" />
                 <h4> Hawaian Shirt with Buttons</h4>
                 <p><del>32.99lv</del> 24.75lv</p>
                 <button class="musthave__btn"><a href="hawaiisale.html"><h2>ORDER</h2></a></button>
             </div>
-            <div class="musthave__card">
+            <div class="musthave__card" id="product2">
                 <img src="baggy.png" alt="must have" />
                 <h4> Blue Baggy Jeans</h4>
                 <p><del>55.99lv</del> 41.99lv</p>
                 <button class="musthave__btn"><a href="baggysale.html"><h2>ORDER</h2></a></button>
             </div>
-            <div class="musthave__card">
+            <div class="musthave__card" id="product3">
                 <img src="green.png" alt="must have" />
                 <h4> Green T-Shirt </h4>
                 <p><del>25.99lv</del> 19.49lv</p>
@@ -74,5 +156,8 @@
             </div>
         </div>
     </section>
+
+    <script src="scroll.js"></script>
+    <script src="search.js"></script>
 </body>
 </html>

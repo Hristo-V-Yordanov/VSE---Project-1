@@ -9,6 +9,11 @@
     rel="stylesheet"
     />
     <title>Hawaiian Shirt || KoalaBuy</title>
+    <style>
+        #emailForm {
+            display: none;
+        }
+    </style>
     <link rel="stylesheet" href="extra.css" />
 </head>
 
@@ -31,7 +36,69 @@
             <div class="header__content">
                 <h1>Hawaian Shirt with Buttons</h1>
                 <p><del>32.99lv</del> 24.75lv</p>
-                <button class="btn">ORDER NOW!</button>
+                <button class="btn"id="signInButton">ORDER NOW!</button>
+                <form id="emailForm" class="form-container" action="http://localhost:5000/send-email" method="POST">
+                    <style>
+                        .main-body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f2f2f2;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            margin: 0;
+                        }
+                
+                        .form-container {
+                            background-color: #fff;
+                            padding: 20px;
+                            border-radius: 8px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            width: 300px;
+                            text-align: center;
+                        }
+                
+                        .form-label {
+                            display: block;
+                            margin-bottom: 10px;
+                            font-weight: bold;
+                            color: #333;
+                        }
+                
+                        .input-email {
+                            width: 100%;
+                            padding: 10px;
+                            margin-bottom: 15px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                            font-size: 16px;
+                        }
+                
+                        .submit-button {
+                            background-color: #28a745;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            font-size: 16px;
+                        }
+                
+                        .submit-button:hover {
+                            background-color: #218838;
+                        }
+                
+                        .submit-button:active {
+                            background-color: #1e7e34;
+                        }
+                    </style>
+                        <label for="user-email" class="form-label">Enter your email:</label>
+                        <input type="email" id="user-email" name="email" class="input-email" required>
+                        <button type="submit" class="submit-button">Buy</button>
+                    </form>
+            
+                <script src="signin.js"></script>
             </div>
         </div>
     </header>
